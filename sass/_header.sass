@@ -1,0 +1,243 @@
+
+//FONTS////FONTS////FONTS////FONTS////FONTS////FONTS////FONTS////FONTS////FONTS////FONTS////FONTS////FONTS//
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap')
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap')
+//FONTS////FONTS////FONTS////FONTS////FONTS////FONTS////FONTS////FONTS////FONTS////FONTS////FONTS////FONTS//
+
+//HEADER
+header
+    overflow: hidden
+    display: flex
+    height: 100vh
+    min-height: 600px
+    //LEFT SIDE OF THE PAGE
+    .pageLeft
+        position: relative
+        background-color: $leftBgcolor
+        height: 100%
+        width: $firstHalfWidth
+        top: 0
+        left: 0
+        //ALL PHOTOS VIEWED ON HEADER
+        .photo
+            z-index: 1
+            position: absolute
+            height: 426px
+            width: 320px
+            top: 20%
+            left: 50%
+            background-repeat: no-repeat
+            background-size: contain
+            transform: scale(0, 0)
+            animation: imgScaleAnimation 1.5s 1.5s both
+            transition: 1s
+            opacity: 1
+            transition: opacity 1.5s linear
+            // @media (max-width: 1440px), (max-height: 900px)
+            //     height: 399px
+            //     width: 300px
+            //     top: 18%
+        .photoHidden
+            opacity: 0
+            transition: opacity 1.5s linear
+        .color99
+            background-image: url('../img/111.png')
+        .color0
+            background-image: url('../img/222.png')
+        .color1
+            background-image: url('../img/333.png')
+        .color2
+            background-image: url('../img/444.png')
+        .color3
+            background-image: url('../img/555.png')
+        .color4
+            background-image: url('../img/666.png')
+        .color5
+            background-image: url('../img/777.png')
+        //////////////////////////////////////////////////////////
+        .hello_text
+            position: absolute
+            left: 0
+            top: 80%
+            width: 100%
+            h1
+                font-family: 'Roboto mono', sans-serif
+                display: flex
+                overflow: hidden
+                font-size: $FontSizeL
+                letter-spacing: 1%
+                margin: -2px 0px
+                margin-left: 10%
+                p span
+                    color: transparent
+                p.number
+                    border-right: 0.2vw solid $fontColor
+                    color: $fontColor
+                    padding-right: 2%
+                &:nth-child(2) p.number
+                    animation: numberLineShowin $animationDurationAndDelayTime $animationDurationAndDelayTime steps(1) both
+                &:nth-child(3) p.number
+                    animation: numberLineShowin $animationDurationAndDelayTime $doubledAnimationDurationAndDelayTime 1 steps(1) both
+                div.text_wrap
+                    display: flex
+                    overflow: hidden
+                    p
+                        flex-shrink: 0
+                        &.var
+                            color: $fontColor3
+                        &.mainText
+                            color: $fontColor2
+                .underLine
+                    color: transparent
+                    opacity: 0
+                .underLine.first
+                    animation: underlineAnimation 0.5s 3 steps(3)
+                .underLine.second
+                    animation: underlineAnimation 0.5s 1.5s 3 steps(3)
+                .underLine.third
+                    animation: underlineAnimation 0.5s 3s infinite steps(3)
+                .underLine:nth-child(2)
+                    padding-left: 1vw
+                div.text_wrap.firstAnimation
+                    animation: textWriterLine1 $animationDurationAndDelayTime steps(33) both
+                div.text_wrap.secondAnimation
+                    animation: textWriterLine2 $animationDurationAndDelayTime $animationDurationAndDelayTime steps(40) both
+                // @media screen and (max-width: 1440px), (max-height: 900px)
+                //     font-size: $FontSizeM
+    .pageRight
+        position: relative
+        height: 100%
+        width: $secondHalfWidth
+        div.bgc_img
+            z-index: -3
+            position: absolute
+            top: 0
+            left: 0
+            height: 100%
+            width: 100%
+            background-image: url(../img/bgc1.png)
+            background-size: cover
+            opacity: 0.5
+        nav.navi
+            overflow: hidden
+            z-index: 1
+            position: absolute
+            top: -100%
+            left: 0
+            height: 100%
+            width: 100%
+            transition: 1s
+            background-color: rgba(0, 0, 0, 0.5)
+            ul
+                position: absolute
+                list-style: none
+                top: 50%
+                left: 50%
+                transform: translate(-50%, -50%)
+                li
+                    cursor: pointer
+                    text-align: center
+                    margin: 7em
+                    border: 2px solid orange
+                    width: 250px
+                    line-height: 50px
+                    box-shadow: 15px 15px 10px $leftBgcolor
+                    transition: .2s
+                    background-color: rgb(12, 12, 12)
+                    &:hover
+                        box-shadow: -15px -15px 10px $leftBgcolor
+                        transform: translate(15px, 15px)
+                        a
+                            letter-spacing: 0.3vw
+                    a
+                        color: $fontColor
+                        text-decoration: none
+                        font-size: 2rem
+                        letter-spacing: 0.2vw
+                        transition: .2s
+            &.visible
+                top: 0
+        .darker
+            z-index: -2
+            position: absolute
+            top: 0
+            left: 0
+            height: 100%
+            width: 100%
+            background-color: black
+            opacity: 0.8
+        .whileBanerWrapper
+            z-index: -1
+            position: relative
+            display: flex
+            flex-direction: column
+            top: 50%
+            left: 0
+            transform: translateY(-50%)
+            height: 15%
+            width: 100%
+            transition: 0.5s
+            div:nth-child(1),
+            div:nth-last-child(1)
+                position: relative
+                height: 5%
+                width: $linesInSliderWidth
+                background-color: $fontColor
+                border-radius: 2px
+            .baner
+                position: relative
+                left: -300%
+                height: 80%
+                width: 300%
+                animation: banerSlider 9s 3s infinite linear
+                p
+                    position: absolute
+                    top: 50%
+                    left: 50%
+                    transform: translate(-50%, -50%)
+                    width: 33.3333%
+                    text-align: center
+                    font-size: $FontSizeXXL
+                    text-transform: uppercase
+                    letter-spacing: 3px
+                    font-weight: bold
+                    color: $fontColor
+                    &.text1
+                        transform: translate(+50%, -50%)
+                    &.text3
+                        transform: translate(-150%, -50%)
+                    // @media screen and (max-width: 1440px), (max-height: 900px)
+                    //     font-size: $FontSizeXL
+            .lineAbove
+                animation: banerLineAboveText 6s 3s infinite linear both
+            .lineBelow
+                animation: banerLineBelowText 6s 3s infinite linear both
+    //HOME AND BURGER ICONS
+    div.icon
+        z-index: 2
+        cursor: pointer
+        position: fixed
+        left: 0
+        top: 0
+        margin: 20px
+        height: $iconsSize
+        width: $iconsSize
+        // @media screen and (max-width: 1440px), (max-height: 900px)
+        //     height: 30px
+        //     width: 30px
+    div.menu
+        left: auto
+        right: 0
+
+    div i
+        height: 100%
+        width: 100%
+        text-align: center
+        font-size: $iconsSize
+        color: $fontColor
+        transition: 1s
+        // @media screen and (max-width: 1440px), (max-height: 900px)
+        //     font-size: 30px
+    //changing icons bars>times
+        &.fa-times .fa-bars
+            display: none
